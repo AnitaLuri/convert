@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;1,300;1,400&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d53ca26b74.js" crossorigin="anonymous"></script>
+
+    <title>Conversor - Distâncias</title>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">
+      <img src="image/gato-preto.png" class="logo">    </nav>
+      </a>
+    </nav>
+    <img src="image/cat-sky.png" alt="Gato no espaço" width="100%">
+    <div class="container">
+      <h2>
+        Conversor de Distância
+      </h2>
+      <div>
+        <form >
+          <label for="value-box">Valor : </label>
+          <input type="text" id="value-box" name="value-box" placeholder="0,0000" class="value-box"><br><br>
+          <div>
+            <select class="from" id="sel1">
+              <option value="">Converter de...</option>
+              <option value="MM">Milímetros(mm)</option>
+              <option value="DM">Decímetros(dm)</option>
+              <option value="CM">Centímetros(cm)</option>
+              <option value="M">Metro(m)</option>
+              <option value="KM">Quilômetro(Km)</option>
+              <option value="IN">Polegada(in)</option>
+              <option value="FT">Pé(ft)</option>
+              <option value="YD">Jarda(yd)</option>
+              <option value="MI">Milha(mi)</option>
+              <option value="SEGLUZ">Segundo-Luz</option>
+              <option value="MINLUZ">Minuto-Luz</option>
+              <option value="ANOLUZ">Ano-Luz</option>
+            </select>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+            <select class="to" id="sel2">
+              <option value="">Para...</option>
+              <option value="MM">Milímetros(mm)</option>
+              <option value="DM">Decímetros(dm)</option>
+              <option value="CM">Centímetros(cm)</option>
+              <option value="M">Metro(m)</option>
+              <option value="KM">Quilômetro(Km)</option>
+              <option value="IN">Polegada(in)</option>
+              <option value="FT">Pé(ft)</option>
+              <option value="YD">Jarda(yd)</option>
+              <option value="MI">Milha(mi)</option>
+              <option value="SEGLUZ">Segundo-Luz</option>
+              <option value="MINLUZ">Minuto-Luz</option>
+              <option value="ANOLUZ">Ano-Luz</option>
+            </select>
+          </div><br />
+
+          <input type="button" class="convert" value="Converter">
+        </form>
+        <div id="amount" class="text-center">
+          <h3>Resultado : 
+            <span class="result" 
+                  style="color:#28d305;">
+            </span>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
