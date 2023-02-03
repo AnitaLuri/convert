@@ -12,6 +12,11 @@ body {
   padding: 40px;
 }
 
+.container-2 {
+  text-align: center;
+  padding: 10px;
+}
+
 .container-box {
   display: flex;
   justify-content: space-around;
@@ -49,14 +54,17 @@ body {
   color: #000000;
   text-align: center;
   width: 185px;
+  margin-top: 4px ;
 }
 
 h2 {
   color: #28d305;
+  margin: 2px;
 }
 
 h3 {
   color: #e389ff;
+  margin: 5px;
 }
 
 a {
