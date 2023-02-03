@@ -39,5 +39,5 @@ function displayResults(currency) {
     let fromRate = currency.rates[resultFrom];
     let toRate = currency.rates[resultTo];
     result.innerHTML = 
-       ((toRate / fromRate) * valueFrom).toFixed(2);
+       ((toRate / fromRate) * valueFrom).toFixed(2) + " " + resultTo;
 }

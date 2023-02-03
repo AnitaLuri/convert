@@ -2,22 +2,18 @@ const valueBox = document.querySelector('.value-box');
 const convert = document.querySelector('.convert');
 const fromCurrecy = document.querySelector(".from");
 const toCurrecy = document.querySelector(".to");
-const result = document.querySelector('.value-result');
+const result = document.querySelector('.result');
 let valueFrom ;
 let resultFrom ; 
 let resultTo ;
 
-class distance {
+class temperature {
   constructor() {
-    this.mm = 1000000;
-    this.cm = 100000;
-    this.m = 1000;
-    this.Km = 1;
-    this.in = 39370.1;
-    this.ft = 3280.84;
-    this.yd = 1093.61;
-    this.mi = 0.6213711922;
-    this.ANOLUZ = 0.0000000000001057;
+    this.K = 274.15;
+    this.C = 1;
+    this.F = 33.8;
+    this.R = 0.8;
+    this.RA = 493.47;
   }
 }
 
@@ -38,11 +34,7 @@ toCurrecy.addEventListener('change', (event) => {
 convert.addEventListener("click", getResults);
 
 function getResults() {
-  const units = new distance()
-  if (resultTo == 'ANOLUZ' || resultFrom == 'ANOLUZ') {
-    result.innerHTML = ((units[resultTo]/ units[resultFrom])* valueFrom).toFixed(20) + " ano-luz (aproximadamente)";
-  } else {
-    result.innerHTML = ((units[resultTo]/ units[resultFrom])* valueFrom).toFixed(6) + " " + resultTo;
-  }
-}
+  const value = new temperature()
 
+  result.innerHTML = ((value[resultTo]/ value[resultFrom])* valueFrom).toFixed(2) + " " + resultTo;
+}

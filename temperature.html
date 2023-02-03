@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;1,300;1,400&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d53ca26b74.js" crossorigin="anonymous"></script>
 
     <title>Conversor - Temperatura</title>
   </head>
@@ -23,12 +24,42 @@
         Conversor de Temperatura
       </h2>
       <div>
-        <form action="" method="">
-          <label for="dolar">Valor em  : </label>
-          <input type="text" id="dolar" name="dolar" placeholder=""><br><br>
-          <input class="convert" value="Converter">
+        <form >
+          <label for="value-box">Valor : </label>
+          <input type="text" id="value-box" name="value-box" placeholder="0,0000" class="value-box"><br><br>
+          <div>
+            <select class="from" id="sel1">
+              <option value="">Converter de...</option>
+              <option value=K>Kelvin(K)</option>
+              <option value=C>Celsius(C)</option>
+              <option value=F>Fahrenheit(F)</option>
+              <option value=R>Reaumur(R)</option>
+              <option value=RA>Rankine(Ra)</option>
+            </select>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+            <select class="to" id="sel2">
+              <option value="">Para...</option>
+              <option value=K>Kelvin(K)</option>
+              <option value=C>Celsius(C)</option>
+              <option value=F>Fahrenheit(F)</option>
+              <option value=R>Reaumur(R)</option>
+              <option value=RA>Rankine(Ra)</option>
+            </select>
+          </div><br />
+
+          <input type="button" class="convert" value="Converter">
         </form>
+        <div id="amount" class="text-center">
+          <h3>Resultado : 
+            <span class="result" 
+                  style="color:#28d305;">
+            </span>
+          </h3>
+        </div>
       </div>
     </div>
+    <script src='js/temperature.js'></script>
   </body>
 </html>
