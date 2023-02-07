@@ -36,8 +36,14 @@ function getResults() {
 }
 
 function displayResults(currency) {
-    let fromRate = currency.rates[resultFrom];
-    let toRate = currency.rates[resultTo];
-    result.innerHTML = 
-       ((toRate / fromRate) * valueFrom).toFixed(2) + " " + resultTo;
+  let fromRate = currency.rates[resultFrom];
+  let toRate = currency.rates[resultTo];
+
+  if(isNaN(valueFrom)){
+    return alert("Preencha os campos corretamente!");
+  }
+  if(resultFrom == undefined || resultFrom == '' || resultTo == undefined || resultTo == '' || valueFrom == 0) {
+    return alert('Por favor preencha todos os campos');
+  }
+  result.innerHTML = ((toRate / fromRate) * valueFrom).toFixed(2) + " " + resultTo;
 }

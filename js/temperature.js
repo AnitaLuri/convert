@@ -1,21 +1,11 @@
 const valueBox = document.querySelector('.value-box');
 const convert = document.querySelector('.convert');
-const fromCurrecy = document.querySelector(".from");
-const toCurrecy = document.querySelector(".to");
+const fromTemperature = document.querySelector(".from");
+const toTemperature = document.querySelector(".to");
 const result = document.querySelector('.result');
 let valueFrom ;
 let resultFrom ; 
 let resultTo ;
-
-class temperature {
-  constructor() {
-    this.K = 274.15;
-    this.C = 1;
-    this.F = 33.8;
-    this.R = 0.8;
-    this.RA = 493.47;
-  }
-}
 
 valueBox.addEventListener('input', updateValue);
 function updateValue(event) {
@@ -23,18 +13,36 @@ function updateValue(event) {
   valueFrom = valueBox.value;
 }
 
-fromCurrecy.addEventListener('change', (event) => {
+fromTemperature.addEventListener('change', (event) => {
   resultFrom = `${event.target.value}`;
 });
 
-toCurrecy.addEventListener('change', (event) => {
+toTemperature.addEventListener('change', (event) => {
   resultTo = `${event.target.value}`;
 });
 
 convert.addEventListener("click", getResults);
 
 function getResults() {
-  const value = new temperature()
-
-  result.innerHTML = ((value[resultTo]/ value[resultFrom])* valueFrom).toFixed(2) + " " + resultTo;
+  if(isNaN(valueFrom)){
+    return alert("Preencha os campos corretamente!");
+  }
+  if(resultFrom == undefined || resultFrom == '' || resultTo == undefined || resultTo == '' || valueFrom == undefined ) {
+    return alert('Por favor preencha todos os campos');
+  }
+  if( resultFrom == 'C' && resultTo == 'K') {
+    result.innerHTML = (Number(valueFrom) + 273.15).toFixed(2) + " " + resultTo;
+  } else if(resultFrom == 'K' && resultTo == 'C') {
+    result.innerHTML = (Number(valueFrom) - 273.15).toFixed(2) + " " + resultTo;
+  } else if(resultFrom == 'K' && resultTo == 'F') {
+    result.innerHTML = (((Number(valueFrom)-273)* 1.8)+32).toFixed(2) + " " + resultTo;
+  } else if(resultFrom == 'F' && resultTo == 'K') {
+    result.innerHTML = ((Number(valueFrom)-32)*(5/9)+273).toFixed(2) + " " + resultTo;
+  } else if(resultFrom == 'C' && resultTo == 'F') {
+    result.innerHTML = ((Number(valueFrom)*1.8)+32).toFixed(2) + " " + resultTo;
+  } else if(resultFrom == 'F' && resultTo == 'C'){
+    result.innerHTML = ((Number(valueFrom)-32)/ 1.8).toFixed(2) + " " + resultTo;
+  } else if(resultFrom == resultTo) {
+    result.innerHTML = valueFrom + " " + resultTo;
+  }
 }

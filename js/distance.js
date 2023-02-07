@@ -1,7 +1,7 @@
 const valueBox = document.querySelector('.value-box');
 const convert = document.querySelector('.convert');
-const fromCurrecy = document.querySelector(".from");
-const toCurrecy = document.querySelector(".to");
+const fromDistance = document.querySelector(".from");
+const toDistance = document.querySelector(".to");
 const result = document.querySelector('.value-result');
 let valueFrom ;
 let resultFrom ; 
@@ -27,11 +27,11 @@ function updateValue(event) {
   valueFrom = valueBox.value;
 }
 
-fromCurrecy.addEventListener('change', (event) => {
+fromDistance.addEventListener('change', (event) => {
   resultFrom = `${event.target.value}`;
 });
 
-toCurrecy.addEventListener('change', (event) => {
+toDistance.addEventListener('change', (event) => {
   resultTo = `${event.target.value}`;
 });
 
@@ -39,6 +39,12 @@ convert.addEventListener("click", getResults);
 
 function getResults() {
   const units = new distance()
+  if(isNaN(valueFrom)){
+    return alert("Preencha os campos corretamente!");
+  }
+  if(resultFrom == undefined || resultFrom == '' || resultTo == undefined || resultTo == '' || valueFrom == 0) {
+    return alert('Por favor preencha todos os campos');
+  }
   if (resultTo == 'ANOLUZ' || resultFrom == 'ANOLUZ') {
     result.innerHTML = ((units[resultTo]/ units[resultFrom])* valueFrom).toFixed(20) + " ano-luz (aproximadamente)";
   } else {
