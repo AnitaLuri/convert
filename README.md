@@ -4,4 +4,4 @@
 
 
 <h2>Drafts - Figma </h2>
-<a href="https://www.figma.com/file/f20uDJaTHU6SmUDMz8Izdq/Conversor?node-id=0%3A1&t=srlWO0xdywyXWxmd-1"></a>
+https://www.figma.com/file/f20uDJaTHU6SmUDMz8Izdq/Conversor?node-id=0%3A1&t=srlWO0xdywyXWxmd-1
